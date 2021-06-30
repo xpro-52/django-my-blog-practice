@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <p class="display-4">Post list:</p>
+    <div class="row">
+      {% if post_list %}
+        {% for post in post_list %}
+          <div class="col-6 mb-3">
+            <div class="card text-truncate">
+              <div class="card-body">
+                {% if not post.published_date %}
+                  <p class="text-danger">[draft]</p>
+                {% endif %}
+                <h5 class="card-title">{{ post.title }}</h5>
+                <hr>
+                <p class="card-text">{{ post.text }}</p>
+                <p style="text-align: right;"><small class="text-muted">{{ post.published_date }}</small></p>
+                <div class="btn-group">
+                  <a href="{% url 'blog:post-detail' pk=post.pk %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">View</a>
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'blog:post-update' pk=post.pk %}" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Edit</a>
+                    <a href="{% url 'blog:post-delete' pk=post.pk %}" class="btn btn-sm btn-outline-danger" role="button" aria-pressed="true">delete</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+      <p>There is no blog.</p>
+      {% endif %}
+    </div>
+  </div>
+  
+{% endblock content %}

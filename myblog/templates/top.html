@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  {% if user.is_authenticated %}
+    <h1>Hello {{ user.username }}</h1>
+  {% else %}
+    <h1>Wellcome to My Blog!</h1>
+  {% endif %}
+  <hr>
+  <div class="published-numbers">
+    <label>Published:</label>
+    <p>{{ published_num }} blog{{ published_num | pluralize }}</p>
+  </div>
+  <div class="draft-numbers">
+    {% if user.is_authenticated %}
+      <label>Draft: </label>
+      <p>{{ draft_num }} blog{{ draft_num | pluralize }}</p>
+    {% endif %}
+  </div>
+  <div class="profile mt-2">
+    <h3>Profile:</h3>
+    {% if profile %}
+      <ul>
+        <li>{{ profile.public_name }}</li>
+        <li>{{ profile.born }}</li>
+        <li>{{ profile.occupation }}</li>
+        <li><a href="{{ profile.github }}">Github</a></li>
+        <li>
+          {{ profile.text }}
+        </li>
+      </ul>
+      {% if user.is_authenticated %}
+        <a href="{% url 'blog:profile-update' pk=profile.pk %}" class="btn btn-outline-primary" role="button">Edit</a>
+      {% endif %}
+    {% else %}
+    <p class="test-danger">no profile</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
+

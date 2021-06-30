@@ -1,0 +1,112 @@
+
+.published-numbers {
+    display: block;
+}
+
+.published-numbers label {
+    margin-bottom: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.published-numbers p {
+    display: inline;
+}
+
+.draft-numbers label {
+    margin-bottom: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.draft-numbers p {
+    display: inline;
+}
+
+/*--- login form ---*/
+.login-form form {
+    max-width: 500px;
+    margin: 5em auto;
+    text-align: left;
+    padding: 40px;
+    border: 0.1px solid gray;
+    border-radius: 10px;
+}
+
+.login-form label {
+    color: gray;
+    margin: 15px 0px;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.login-form input, select {
+    display: block;
+    padding: 10px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid gray;
+    color: #555;
+}
+
+.login-form .submit {
+    text-align: right;
+    padding-top: 5px;   
+}
+
+/*--- logout-page ---*/
+.logout-page {
+    max-width: fit-content;
+}
+
+.logout-page .login-url  {
+    text-align: right;
+}
+
+/*--- post-form ---*/
+.post-form form {
+    max-width: 50em;
+    margin: 0px auto;
+    padding: 40px;
+    border: 0.1px solid gray;
+    border-radius: 10px;
+}
+
+.post-form label {
+    color: gray;
+    margin: 15px 0px;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.post-form input {
+    padding: 10px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid gray;
+    color: #555;
+}
+
+.post-form input[type="checkbox"] {
+    display: inline-block;
+    width: 16px;
+    position: relative;
+    top: 2px;
+}
+
+.post-form .submit {
+    text-align: right;
+    padding-top: 5px;
+}
+
+

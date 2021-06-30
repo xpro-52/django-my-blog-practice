@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="post-form">
+      <p class="display-4">Create Form:</p>
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col">
+            <label>{{ form.author.label }}</label>
+            {{ form.author }}
+            <label>{{ form.create_date.label }}</label>
+            {{ form.create_date }}
+          </div>
+          <div class="col">
+            <label>{{ form.title.label }}</label>
+            {{ form.title }}
+            <label>{{ form.text.label }}</label>
+            {{ form.text }}
+            <div class="submit">
+              <label>{{ form.publish_flg.label }}</label>
+              {{ form.publish_flg }}
+              <button type="submit" class="btn btn-outline-primary" value="submit">submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

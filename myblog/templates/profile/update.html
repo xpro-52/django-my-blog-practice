@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="profile-update">
+   <p class="display-4">Edit Profile:</p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-3">
+          {% for fields in form %}
+            {% if fields != form.text %}
+              <label>{{ fields.label }}</label>
+              <p>{{ fields }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="col">
+          <label>{{ form.text.label }}</label>
+          {{ form.text }}
+        </div>
+      </div>
+      <div class="submit" style="width: 100%;">
+        <button type="submit" class="btn btn-outline-primary" value="submit" style="text-align: right;">submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

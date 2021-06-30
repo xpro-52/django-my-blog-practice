@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <section class="post-detail" style="max-width: 50em;">
+      {% if not post.published_date %}
+        <p class="text-danger">This is not public yet.</p>
+      {% endif %}
+      <p class="display-4">{{ post.title }}</p>
+      <hr>
+      <p>{{ post.text }}</p>
+      <p class="published_date" style="text-align: right;"><small class="text-muted">{{ post.published_date }}</small></p>
+    </section>
+  </div>
+{% endblock content %}
