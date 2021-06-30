@@ -1,0 +1,4 @@
+.vscode
+db.sqlite3
+__pycache__
+enviroment_3_9_5
